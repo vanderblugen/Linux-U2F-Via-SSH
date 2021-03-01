@@ -59,3 +59,4 @@ sudo systemctl restart ssh
 ```
 
 ## All Set
+##### If ssh is the only way you log in, open another ssh session to verify functionality before logging out of the intial seession.
