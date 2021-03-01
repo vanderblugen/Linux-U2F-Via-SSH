@@ -31,7 +31,8 @@ sudo systemctl restart ssh
 ```
 
 ## Install 2factor authentication
-### This sets up the codes for the current user and does not for any other user.  You have to connect as the other users to do that. Being that `sshd` is changed the other users may not be able to log into ssh until its setup on them.
+#### This sets up the 2FA codes for the current user.  Not for any other user.  Each user has to be setup separate.  
+##### Since the file `sshd` is changed, until each user is setup for 2FA, they may not be able to log via ssh.
 ```shell
 sudo apt install libpam-google-authenticator -y
 google-authenticator
