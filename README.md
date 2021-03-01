@@ -1,6 +1,6 @@
 # linux-u2f-via-ssh
-I am not the only person to come up with this
-This is mainly for a reference for me to come back to later.  I accept no responsibility if you use it.
+I am not the only person to come up with this<br>
+This is mainly for a reference for me to come back to later.  I accept no responsibility if you use it.<br>
 Just about everything was pulled from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/
 
 ## Run an upgrade first
@@ -39,14 +39,14 @@ google-authenticator
 Scan the QR code via a 2FA app and record emergency scratch codes
 
 
-### Enable 2factor
-There are 2 ways to ask for the 2FA code.  Before or after the password.  Use only one of them.
-##### Ask for code before the password
+## Enable 2factor
+There are 2 ways to ask for the 2FA code.  Before or after the password.  Run only one of them.
+### Ask for code before the password
 ```shell
 sudo cp /etc/pam.d/sshd /etc/pam.d/sshd~
 sudo sed  -i '/\@include common-auth/i \\nauth required pam_google_authenticator.so\n' /etc/pam.d/sshd
 ```
-##### Ask for code after the password
+### Ask for code after the password
 ```shell
 sudo cp /etc/pam.d/sshd /etc/pam.d/sshd~
 sudo sed  -i '/\@include common-auth/a \\nauth required pam_google_authenticator.so\n' /etc/pam.d/sshd
