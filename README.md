@@ -1,7 +1,7 @@
 # linux-u2f-via-ssh
-#### I am not the only person to come up with this
-#### This is mainly for a reference for me to come back to later.  I accept no responsibility if you use it.
-#### Just about everything was pulled from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/
+I am not the only person to come up with this
+This is mainly for a reference for me to come back to later.  I accept no responsibility if you use it.
+Just about everything was pulled from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/
 
 ## Run an upgrade first
 ```shell
@@ -17,9 +17,8 @@ sudo systemctl start ssh
 ```
 
 ## Enabling challenge-response
-### This is an automatic script that 
-#### Makes a bckup of /etc/ssh/sshd_config in the /etc/ssh directory
-#### changes ChallengeResponseAuthentication no to ChallengeResponseAuthentication yes in /etc/ssh/sshd_config
+This is an automatic script that makes a bckup of `/etc/ssh/sshd_config`
+and Changes `ChallengeResponseAuthentication no` to `ChallengeResponseAuthentication yes` in `/etc/ssh/sshd_config`
 ```shell
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config~
 sudo sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
@@ -37,7 +36,7 @@ sudo systemctl restart ssh
 sudo apt install libpam-google-authenticator -y
 google-authenticator
 ```
-### Scan that QR code via app and get emergency scratch codes
+Scan the QR code via a 2FA app and record emergency scratch codes
 
 
 ### Enable 2factor
@@ -59,4 +58,4 @@ sudo systemctl restart ssh
 ```
 
 ## All Set
-##### If ssh is the only way you log in, open another ssh session to verify functionality before logging out of the intial seession.
+If ssh is the only way you log in, open another ssh session to verify functionality before logging out of the intial seession.
