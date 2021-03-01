@@ -30,8 +30,8 @@ sudo systemctl restart ssh
 ```
 
 ## Install 2factor authentication
-#### This sets up the 2FA codes for the current user.  Not for any other user.  Each user has to be setup separate.  
-##### Since the file `sshd` is changed, until each user is setup for 2FA, they may not be able to log via ssh.
+This sets up the 2FA codes for the current user.  Not for any other user.  Each user has to be setup separate.  
+Since the file `sshd` is changed, until each user is setup for 2FA, they may not be able to log via ssh.
 ```shell
 sudo apt install libpam-google-authenticator -y
 google-authenticator
@@ -40,7 +40,7 @@ Scan the QR code via a 2FA app and record emergency scratch codes
 
 
 ### Enable 2factor
-#### There are 2 ways to ask for the 2FA code.  Before or after the password.  Use only one of them.
+There are 2 ways to ask for the 2FA code.  Before or after the password.  Use only one of them.
 ##### Ask for code before the password
 ```shell
 sudo cp /etc/pam.d/sshd /etc/pam.d/sshd~
