@@ -1,7 +1,7 @@
 # linux-u2f-via-ssh
 #### I am not the only person to come up with this
-#### This is mainly for a reference for me to come back to later.  If you want to use it go ahead
-#### I pulled just about everything on this from from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/
+#### This is mainly for a reference for me to come back to later.  I accept no responsibility if you use it.
+#### Just about everything was pulled from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/
 
 ## Run an upgrade first
 ```shell
