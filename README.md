@@ -33,7 +33,7 @@ sudo systemctl restart ssh
 ## Install 2factor authentication
 ```shell
 sudo apt install libpam-google-authenticator -y
-sudo google-authenticator
+google-authenticator
 ```
 ### Scan that QR code via app and get emergency scratch codes
 
