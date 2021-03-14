@@ -1,5 +1,4 @@
 # linux-u2f-via-ssh
-I am not the only person to come up with this<br>
 This is mainly for a reference for me to come back to later.  I accept no responsibility if you use it.<br>
 Just about everything was pulled from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/
 
