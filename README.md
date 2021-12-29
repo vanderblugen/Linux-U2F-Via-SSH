@@ -4,9 +4,9 @@ Just about everything was pulled from https://www.raspberrypi.org/blog/setting-u
 
 ## Run an upgrade first
 ```shell
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get dist-upgrade -y
+sudo apt update
+sudo apt upgrade -y
+sudo apt full-upgrade -y
 ```
 
 ## Enable ssh and start it
