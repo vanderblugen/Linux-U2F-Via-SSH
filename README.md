@@ -4,9 +4,9 @@ Just about everything was pulled from https://www.raspberrypi.org/blog/setting-u
 
 ## Run an upgrade first
 ```shell
-sudo apt update
-sudo apt upgrade -y
-sudo apt full-upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get full-upgrade -y
 ```
 
 ## Enable ssh and start it
@@ -35,7 +35,7 @@ whoami
 ```
 Since the file `sshd` is changed, until each user is setup for 2FA, they may not be able to log via ssh.
 ```shell
-sudo apt install libpam-google-authenticator -y
+sudo apt-get install libpam-google-authenticator -y
 google-authenticator
 ```
 Scan the QR code via a 2FA app and record emergency scratch codes
