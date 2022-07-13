@@ -42,7 +42,7 @@ Scan the QR code via a 2FA app and record emergency scratch codes
 
 
 ## Enable 2factor
-There are 2 ways to ask for the 2FA code.  Before or after the password.  Run only one of them.
+There are 2 ways to ask for the 2FA code.  Before or after the password.  Run only one of these once.
 ### Ask for code before the password
 ```shell
 sudo cp /etc/pam.d/sshd /etc/pam.d/sshd~
