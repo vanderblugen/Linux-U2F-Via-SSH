@@ -22,6 +22,9 @@ and Changes `ChallengeResponseAuthentication no` to `ChallengeResponseAuthentica
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config~
 sudo sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
 ```
+Newer versions of sshd_config contain KbdInteractiveAuthentication and not ChallengeResponseAuthentication
+KbdInteractiveAuthentication No needs to be changes to KbdInteractiveAuthentication yes
+
 
 ## Restart the ssh daemon
 ```shell
