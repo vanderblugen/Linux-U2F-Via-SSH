@@ -1,8 +1,8 @@
 # linux-u2f-via-ssh
-I accept no responsibility if you use it.<br>
-Just about everything was pulled from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/<br>
-When this is enabled, it is enabled system wide for all users.  If it is not setup for a particular user that user will not be able to ssh into the machine.
-This enables ssh for login only, not for elevating privlidges for that particular user.
+<p>I accept no responsibility if anyone uses this.  Use at your own risk.</p>
+<p>Just about everything was pulled from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/</p>
+<p>When this is enabled, it is enabled system wide for all users.  If it is not fully setup for a particular user, that user will not be able to connect via ssh into the machine.</p>
+<p>This does not enable 2FA for elevating privlidges, only for ssh for login only.</p>
 
 # Update and Upgrade the OS
 
