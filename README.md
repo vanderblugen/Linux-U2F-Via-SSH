@@ -2,17 +2,23 @@
 This is mainly for a reference for me to come back to later.  I accept no responsibility if you use it.<br>
 Just about everything was pulled from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/
 
+# Update and Upgrade the OS
+
 ```shell
 # Update and Upgrade
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get full-upgrade -y
+```
 
 # Enable ssh and start it
+```shell
 sudo systemctl enable ssh
 sudo systemctl start ssh
+```
 
 # Enable challenge-response
+```shell
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config~
 
 SSH_CONFIG="/etc/ssh/sshd_config"
@@ -24,11 +30,15 @@ elif grep -qE "^#?ChallengeResponseAuthentication " "$SSH_CONFIG"; then
 else
     echo "KbdInteractiveAuthentication yes" | sudo tee -a "$SSH_CONFIG" > /dev/null
 fi
+```
 
 # Restart the SSH service for changes to take effect
+```shell
 sudo systemctl restart sshd
+```
 
 # Install google authenticator for 2factor
+```shell
 sudo apt-get install libpam-google-authenticator -y
 ```
 
