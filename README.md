@@ -57,7 +57,6 @@ Scan the QR code via a 2FA app and record emergency scratch codes.
 Select Y or N on each of them.  Recommended Y for each.
 
 ## Enable 2factor
-There are 2 ways to ask for the 2FA code.  
 RUN THIS ONCE
 ```shell
 # Setup 2factor
