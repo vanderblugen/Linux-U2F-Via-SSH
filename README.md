@@ -20,16 +20,22 @@ This is an automatic script that makes a bckup of `/etc/ssh/sshd_config`
 and Changes `ChallengeResponseAuthentication no` to `ChallengeResponseAuthentication yes` in `/etc/ssh/sshd_config`
 ```shell
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config~
-sudo sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
+
+SSH_CONFIG="/etc/ssh/sshd_config"
+
+if grep -qE "^#?KbdInteractiveAuthentication " "$SSH_CONFIG"; then
+    sudo sed -i 's/^\(#\s*\)*KbdInteractiveAuthentication.*/KbdInteractiveAuthentication yes/I' "$SSH_CONFIG"
+elif grep -qE "^#?ChallengeResponseAuthentication " "$SSH_CONFIG"; then
+    sudo sed -i 's/^\(#\s*\)*ChallengeResponseAuthentication.*/ChallengeResponseAuthentication yes/I' "$SSH_CONFIG"
+else
+    echo "KbdInteractiveAuthentication yes" | sudo tee -a "$SSH_CONFIG" > /dev/null
+fi
+
+# Restart the SSH service for changes to take effect
+sudo systemctl restart sshd
 ```
 Newer versions of sshd_config contain KbdInteractiveAuthentication and not ChallengeResponseAuthentication
 KbdInteractiveAuthentication No needs to be changes to KbdInteractiveAuthentication yes
-
-
-## Restart the ssh daemon
-```shell
-sudo systemctl restart ssh
-```
 
 ## Install 2factor authentication
 Each user has to be setup separate and this sets up the 2FA codes for the current user.  Check current user logged in.
