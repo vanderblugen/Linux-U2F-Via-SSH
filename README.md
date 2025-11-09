@@ -33,6 +33,7 @@ fi
 ```
 
 # Restart the SSH service for changes to take effect
+This will not disconnect existing SSH connections
 ```shell
 sudo systemctl restart sshd
 ```
@@ -48,6 +49,7 @@ Each user has to be setup separate and this sets up the 2FA codes for the curren
 whoami
 ```
 Since the file `sshd` is changed, until each user is setup for 2FA, they may not be able to log via ssh.
+Run this as the user that needs 2FA enabled
 ```shell
 google-authenticator
 ```
