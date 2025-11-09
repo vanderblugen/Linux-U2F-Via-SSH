@@ -1,8 +1,9 @@
 # linux-u2f-via-ssh
-I accept no responsibility if anyone uses this.  Use at your own risk.<br>
-Just about everything was pulled from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/<br>
-When this is enabled, it is enabled system wide for all users.  If it is not fully setup for a particular user, that user will not be able to connect via ssh into the machine.<br>
-This does not enable 2FA for elevating privlidges, only for ssh for login only.
+## This enables system wide 2factor for login via ssh<br>
+- When this is enabled, it is enabled system wide for all users.  If not fully implemented for a particular user, that user will be unable to connect via ssh.
+- I accept no responsibility if anyone uses this.  Use at your own risk.
+- Most of this was obtained from https://www.raspberrypi.org/blog/setting-up-two-factor-authentication-on-your-raspberry-pi/
+- This is for ssh logon only, not for elevating privlidges.
 
 # Update and Upgrade the OS
 
@@ -50,14 +51,16 @@ Each user has to be setup separate and this sets up the 2FA codes for the curren
 ```shell
 whoami
 ```
-Since the file `sshd` is changed, until each user is setup for 2FA, they may not be able to log via ssh.<br>
-Run this as the user that needs 2FA enabled
+Since the file sshd is changed, until each user is setup for 2FA, they may not be able to log via ssh.<br>
+Run this as the user that needs 2FA enabled.<br>
+This creates a hidden file `.google_authenticator` in the users home directory where the 2FA information is stored.
 
 ```shell
 google-authenticator
 ```
-Scan the QR code via a 2FA app and record emergency scratch codes.<br>
-Select Y or N on each of them.  Recommended Y for each.
+
+Scan the QR code via a 2FA app (or record the code) and record emergency scratch codes.<br>
+Select Y or N for each of the additional security measures.  Recommended Y for each.
 
 ## Enable 2factor
 RUN THIS ONCE
